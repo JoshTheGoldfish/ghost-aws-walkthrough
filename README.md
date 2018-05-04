@@ -1,0 +1,2 @@
+# Ghost Hosting Tutorial: AWS
+
