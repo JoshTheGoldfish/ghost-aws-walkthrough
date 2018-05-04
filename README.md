@@ -34,9 +34,11 @@ In this step, we will define what kind of connections we'll allow to our instanc
 
 ![image of default security settings](images/4_Sec_Group_Conf_Start.png)
 
-You can leave this as is if you wish, but for this tutorial we will select the source as **My IP**. We also want to allow HTTP(S) traffic from the Internet, so click the Add Rule button and add HTTP and HTTPS to your security group. While we're at it, it's a good practice to name your security group and give it a good description. Here's what the final configuration should look like:
+You can leave this as is if you wish, but for this tutorial we will select the source as "My IP". We also want to allow HTTP(S) traffic from the Internet, so click the Add Rule button and add HTTP and HTTPS to your security group. While we're at it, it's a good practice to name your security group and give it a good description. Here's what the final configuration should look like:
 
 ![image of finished security settings](images/5_Sec_Group_Conf_Finish.png)
+
+### Review Instance Configuration
 
 Click the Review and Launch button. Go ahead and review everything and make sure nothing sticks out as odd. Here's a checklist:
 
@@ -50,3 +52,9 @@ Click the Review and Launch button. Go ahead and review everything and make sure
 Ultimately, it should look very similar to the image below:
 
 ![image of review instance launch](images/6_Review_Instance_Launch.png)
+
+### Key Setup
+
+Click the Launch button. When you click this AWS will give show a modal asking you to either select an existing key pair, or create a new one. Create a new one if needed, download the key, and click "Launch Instances"
+
+![image of key creation](images/7_Key_Creation_And_Download.png)
