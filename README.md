@@ -34,6 +34,19 @@ In this step, we will define what kind of connections we'll allow to our instanc
 
 ![image of default security settings](images/4_Sec_Group_Conf_Start.png)
 
-You can leave this as is if you wish, but for this tutorial we will select the source a **My IP**. We also want to allow HTTP(S) traffic from the internet, so click the Add Rule button and add HTTP and HTTPS to your security group. While we're at it, it's a good practice to name your security group and give it a good description. Here's what the final configuration should look like:
+You can leave this as is if you wish, but for this tutorial we will select the source as **My IP**. We also want to allow HTTP(S) traffic from the Internet, so click the Add Rule button and add HTTP and HTTPS to your security group. While we're at it, it's a good practice to name your security group and give it a good description. Here's what the final configuration should look like:
 
 ![image of finished security settings](images/5_Sec_Group_Conf_Finish.png)
+
+Click the Review and Launch button. Go ahead and review everything and make sure nothing sticks out as odd. Here's a checklist:
+
+1. AMI is Ubuntu Server 16.04 LTS (HVM), SSD Volume Type
+2. Instance type is t1.micro
+3. Security group is appropriately named, has a good description
+4. You're allowing SSH on port 22
+5. You're allowing HTTP on port 80
+6. You're allowing HTTPS on port 443 (this will appear as "Custom TCP Rule")
+
+Ultimately, it should look very similar to the image below:
+
+![image of review instance launch](image/6_Review_Instance_Launch)
