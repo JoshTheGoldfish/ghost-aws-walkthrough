@@ -49,4 +49,4 @@ Click the Review and Launch button. Go ahead and review everything and make sure
 
 Ultimately, it should look very similar to the image below:
 
-![image of review instance launch](image/6_Review_Instance_Launch)
+![image of review instance launch](image/6_Review_Instance_Launch.png)
