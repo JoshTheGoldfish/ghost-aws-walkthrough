@@ -11,3 +11,8 @@ The first thing we need to do is configure an EC2 instance. In case you're not f
 After you'd logged into AWS and you're on the landing page, select the EC2 service. You will arrive at the EC2 Dashboard. If that shiny blue "Launch Instance" button is begging you to click it, you're in luck, because that's exactly what we're going to do.
 
 ![image of EC2 Dashboard](images/1_EC2_Home.png)
+
+This will begin the process of configuring the EC2 instance you wish to launch. First, you need to decide on the machine image you want. We're going to use the **Ubuntu Server 16.04 LST (HVM), SSD Volume Type** instance. Click on the Select button for that instance.
+
+![image of AMI Selection](images/2_AMI_Selection.png)
+
