@@ -97,26 +97,24 @@ ghost-user:~$ sudo apt-get update && sudo apt-get upgrade
 Install NGINX:
 
 ```
-sudo apt-get install nginx
+ghost-user:~$ sudo apt-get install nginx
 ```
 
 Make sure the firewall allows HTTP(S) connections:
 
 ```
-sudo ufw allow 'Nginx Full'
+ghost-user:~$ sudo ufw allow 'Nginx Full'
 ```
 
-Install MySQL:
+Install MySQL, __making sure to set a password for the root user__:
 
 ```
-sudo apt-get install mysql-server
+ghost-user:~$ sudo apt-get install mysql-server
 ```
-
-**Make sure you set a password for the root user**
 
 Next, we will add the NodeSource APT repository for Node 6 so that we can install Node.Js, then we will install Node.js
 
 ```
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash
-sudo apt-get install -y nodejs
+ghost-user:~$ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash
+ghost-user:~$ sudo apt-get install -y nodejs
 ```
