@@ -166,4 +166,3 @@ Copy that to your clipboard and return to the SSH session in your command line. 
 ```
 
 Now that Ghost is running, go ahead and paste the URL you copied earlier into your favorite web browser and admire your handy work!
-
