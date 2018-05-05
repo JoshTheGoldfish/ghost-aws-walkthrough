@@ -106,15 +106,42 @@ Make sure the firewall allows HTTP(S) connections:
 ghost-user:~$ sudo ufw allow 'Nginx Full'
 ```
 
-Install MySQL, __making sure to set a password for the root user__:
+Install MySQL, *making sure to set a password for the root user*:
 
 ```
 ghost-user:~$ sudo apt-get install mysql-server
 ```
 
-Next, we will add the NodeSource APT repository for Node 6 so that we can install Node.Js, then we will install Node.js
+Next, we will add the NodeSource APT repository for Node 6 so that we can install Node.Js, then we will install Node.js:
 
 ```
 ghost-user:~$ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash
 ghost-user:~$ sudo apt-get install -y nodejs
+```
+
+Let's install the Ghost-CLI:
+
+```
+ghost-user:~$ sudo npm i -g ghost-cli
+```
+
+And then verify it installed correctly:
+
+```
+ghost-user:~$ ghost help
+```
+
+Now create a new folder for Ghost to reside, give your ghost-user ownership of this direction, give the folder the correct permissions, and navigate to the folder:
+
+```
+ghost-user:~$ sudo mkdir -p /var/www/ghost
+ghost-user:~$ sudo chown ghost-user:ghost-user /var/www/ghost
+ghost-user:~$ sudo chmod 775 /var/www/ghost
+ghost-user:~$ cd /var/www/ghost
+```
+
+And now, the moment you're been waiting for. Install Ghost:
+
+```
+ghost-user:~$ ghost install
 ```
