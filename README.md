@@ -148,7 +148,7 @@ ghost-user:/var/www/ghost$ ghost install
 
 You'll be asked a few questions during the setup, the first being what you'd like your blog URL to be. Go back to your AWS console and check out your EC2 instances. Under the "Public DNS (IPv4)" column, you will see the public address for your EC2 instance that is running Ghost. 
 
-![public dns for ec2 isntance](images/8_Public_DNS.png)
+![public dns for ec2 instance](images/8_Public_DNS.png)
 
 Copy that to your clipboard and return to the SSH session in your command line. The entry for your prompts shoud look like this:
 
