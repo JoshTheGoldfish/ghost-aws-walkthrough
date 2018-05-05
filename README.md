@@ -16,7 +16,7 @@ After you'd logged into AWS and you're on the landing page, select the EC2 servi
 
 ### Select Machine Image
 
-This will begin the process of configuring the EC2 instance you wish to launch. First, you need to decide on the machine image you want. This is akin to selecting what operating system you'd like to run on the server. We're going to use the **Ubuntu Server 16.04 LST (HVM), SSD Volume Type** instance, because Ubuntu 16.04 LTS is officially supported by Ghost. Click on the Select button for that instance.
+This will begin the process of configuring the EC2 instance you wish to launch. First, you need to decide on the machine image you want. This is akin to selecting what operating system you'd like to run on the server. We're going to use the **Ubuntu Server 16.04 LST (HVM), SSD Volume Type** instance, because Ubuntu 16.04 LTS is officially supported by Ghost. Click on the "Select" button for that instance.
 
 ![image of AMI selection](images/2_AMI_Selection.png)
 
@@ -34,16 +34,16 @@ In this step, we will define what kind of connections we'll allow to our instanc
 
 ![image of default security settings](images/4_Sec_Group_Conf_Start.png)
 
-You can leave this as is if you wish, but for this tutorial we will select the source as "My IP". We also want to allow HTTP(S) traffic from the Internet, so click the Add Rule button and add HTTP and HTTPS to your security group. While we're at it, it's a good practice to name your security group and give it a good description. Here's what the final configuration should look like:
+You can leave this as is if you wish, but for this tutorial we will select the source as **My IP**. We also want to allow HTTP(S) traffic from the Internet, so click the "Add Rule" button and add HTTP and HTTPS to your security group. While we're at it, it's a good practice to name your security group and give it a good description. Here's what the final configuration should look like:
 
 ![image of finished security settings](images/5_Sec_Group_Conf_Finish.png)
 
 ### Review Instance Configuration
 
-Click the Review and Launch button. Go ahead and review everything and make sure nothing sticks out as odd. Here's a checklist:
+Click the "Review and Launch" button. Go ahead and review everything and make sure nothing sticks out as odd. Here's a checklist:
 
 1. AMI is Ubuntu Server 16.04 LTS (HVM), SSD Volume Type
-2. Instance type is t1.micro
+2. Instance type is t2.micro
 3. Security group is appropriately named, has a good description
 4. You're allowing SSH on port 22
 5. You're allowing HTTP on port 80
@@ -55,6 +55,19 @@ Ultimately, it should look very similar to the image below:
 
 ### Key Setup
 
-Click the Launch button. When you click this AWS will give show a modal asking you to either select an existing key pair, or create a new one. Create a new one if needed, download the key, and click "Launch Instances"
+Click the "Launch" button. When you click this AWS will give show a modal asking you to either select an existing key pair, or create a new one. Create a new one if needed, download the key, and click "Launch Instances".
 
 ![image of key creation](images/7_Key_Creation_And_Download.png)
+
+On the next page, you should get confirmation that your instance is being launched. Click the "View Instances" button and you should see your instance either launching, or already launched.
+
+## Connecting to your Instance
+
+Select the instance you just launched and click the "Connect" button. Follow the instructions, first making sure your key is not publically viewable:
+
+`$ cd <directory-of-your-key>`
+`$ chmod 400 ghost-ubuntu-key.pem`
+
+Then connect to your instance via SSH:
+
+`$ ssh -i "ghost-ubuntu-key.pem" <public-dns-for-your-instance>`
