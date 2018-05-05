@@ -165,5 +165,5 @@ Copy that to your clipboard and return to the SSH session in your command line. 
 ? Do you want to start Ghost? Yes
 ```
 
-Now that Ghost is running, go ahead and paste the URL you copied earlier into your favorite browser and admire your handiwork.
+Now that Ghost is running, go ahead and paste the URL you copied earlier into your favorite web browser and admire your handy work!
 
