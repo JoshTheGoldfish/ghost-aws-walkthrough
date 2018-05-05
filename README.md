@@ -65,8 +65,10 @@ On the next page, you should get confirmation that your instance is being launch
 
 Select the instance you just launched and click the "Connect" button. Follow the instructions, first making sure your key is not publically viewable:
 
-`$ cd <directory-of-your-key>`
-`$ chmod 400 ghost-ubuntu-key.pem`
+```
+$ cd <directory-of-your-key>
+$ chmod 400 ghost-ubuntu-key.pem
+```
 
 Then connect to your instance via SSH:
 
