@@ -143,5 +143,5 @@ ghost-user:~$ cd /var/www/ghost
 And now, the moment you're been waiting for. Install Ghost:
 
 ```
-ghost-user:~$ ghost install
+ghost-user:/var/www/ghost$ ghost install
 ```
