@@ -63,13 +63,60 @@ On the next page, you should get confirmation that your instance is being launch
 
 ## Connecting to your Instance
 
-Select the instance you just launched and click the "Connect" button. Follow the instructions, first making sure your key is not publically viewable:
+Select the instance you just launched and click the "Connect" button. Follow the instructions, making sure your key is not publically viewable, the doing an ssh into your EC2 isntance:
 
 ```
 $ cd <directory-of-your-key>
 $ chmod 400 ghost-ubuntu-key.pem
+$ ssh -i "ghost-ubuntu-key.pem" <public-dns-for-your-instance>
 ```
 
-Then connect to your instance via SSH:
+You should be prompted on whether or not you want to continue, as the authenticity of the host cannot be established. Continue through this and you should successfully access your EC2 instance:
 
-`$ ssh -i "ghost-ubuntu-key.pem" <public-dns-for-your-instance>`
+```
+ubuntu@<ec2-instance-public-ip>:~$
+```
+
+## Installing Ghost
+
+First, we will need to establish all the prerequisites for install Ghost-CLI, Ghost's command line interface tool. Using the command line, setup a new user and log in as the created user (note: everything after `#` is a comment and should not be included in the command):
+
+```
+ubuntu:~$ sudo adduser ghost-user          # add new user
+ubuntu:~$ sudo usermod -aG sudo ghost-user # give new user elevated permissions
+ubuntu:~$ su - ghost-user                  # login as new user
+ghost-user:~$
+```
+
+Next, update the package list and upgrade the install packages:
+
+```
+ghost-user:~$ sudo apt-get update && sudo apt-get upgrade
+```
+
+Install NGINX:
+
+```
+sudo apt-get install nginx
+```
+
+Make sure the firewall allows HTTP(S) connections:
+
+```
+sudo ufw allow 'Nginx Full'
+```
+
+Install MySQL:
+
+```
+sudo apt-get install mysql-server
+```
+
+**Make sure you set a password for the root user**
+
+Next, we will add the NodeSource APT repository for Node 6 so that we can install Node.Js, then we will install Node.js
+
+```
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash
+sudo apt-get install -y nodejs
+```
